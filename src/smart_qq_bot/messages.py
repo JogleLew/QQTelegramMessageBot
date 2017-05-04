@@ -42,7 +42,7 @@ class QMessage(object):
     def content(self):
         text = ""
         for msg_part in self._content:
-            if isinstance(msg_part, six.string_types):
+            if not isinstance(msg_part, list):
                 text += msg_part
             elif len(msg_part) > 1:
                 if str(msg_part[0]) == OFF_PIC_PART:

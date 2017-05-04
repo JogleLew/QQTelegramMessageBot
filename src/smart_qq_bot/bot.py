@@ -404,7 +404,7 @@ class QQBot(object):
         try:
             logger.info("Requesting the account by uin:\t" + str(tuin))
             rsp = self.client.get(
-                        'http://s.web2.qq.com/api/get_friend_uin2?tuin={0}&type=1&vfwebqq={1}&t={2}'.format(
+                        'https://s.web2.qq.com/api/get_friend_uin2?tuin={0}&type=1&vfwebqq={1}&t={2}'.format(
                             uin_str,
                             self.vfwebqq,
                             self.client.get_timestamp()
@@ -763,7 +763,7 @@ class QQBot(object):
             logger.debug("get_group_member_info_list 输入为0，返回 None")
             return
         try:
-            url = "http://s.web2.qq.com/api/get_group_info_ext2?gcode=%s&vfwebqq=%s&t=%s" % (
+            url = "https://s.web2.qq.com/api/get_group_info_ext2?gcode=%s&vfwebqq=%s&t=%s" % (
                 group_code, self.vfwebqq, int(time.time() * 100))
             response = self.client.get(url)
             rsp_json = json.loads(response)
@@ -846,7 +846,7 @@ class QQBot(object):
             }
         ]
         """
-        url = "http://qun.qq.com/cgi-bin/qun_mgr/search_group_members"
+        url = "https://qun.qq.com/cgi-bin/qun_mgr/search_group_members"
         data = {
             'bkn':  self.bkn,
             'gc':   str(group_id),
@@ -854,7 +854,7 @@ class QQBot(object):
             'end':  2000,
             'sort': 0,
         }
-        response = self.client.post(url, data=data, refer='http://qun.qq.com/member.html')
+        response = self.client.post(url, data=data, refer='https://qun.qq.com/member.html')
         logger.debug("search_group_members response: {}".format(response))
         rsp_json = json.loads(response)
         if rsp_json['ec'] == 0:
@@ -874,7 +874,7 @@ class QQBot(object):
             return
         try:
             did = str(did)
-            url = "http://d1.web2.qq.com/channel/get_discu_info?did={did}&psessionid={psessionid}&vfwebqq={vfwebqq}&clientid={clientid}&t={t}".format(
+            url = "https://d1.web2.qq.com/channel/get_discu_info?did={did}&psessionid={psessionid}&vfwebqq={vfwebqq}&clientid={clientid}&t={t}".format(
                 did=did, psessionid=self.psessionid, vfwebqq=self.vfwebqq, clientid=self.client_id,
                 t=int(time.time() * 100)
             )
@@ -930,7 +930,7 @@ class QQBot(object):
         rsp = ""
         try:
             logger.info("Starting send group message: %s" % reply_content)
-            req_url = "http://d1.web2.qq.com/channel/send_qun_msg2"
+            req_url = "https://d1.web2.qq.com/channel/send_qun_msg2"
             data = {
                 'r':
                  '{{"group_uin":{0}, "face":564,"content":"[\\"{4}\\",[\\"font\\",{{\\"name\\":\\"Arial\\",\\"size\\":\\"10\\",\\"style\\":[0,0,0],\\"color\\":\\"000000\\"}}]]","clientid":{1},"msg_id":{2},"psessionid":"{3}"}}'.format(
@@ -962,7 +962,7 @@ class QQBot(object):
         fix_content = str(reply_content.replace("\\", "\\\\\\\\").replace("\n", "\\\\n").replace("\t", "\\\\t"))
         rsp = ""
         try:
-            req_url = "http://d1.web2.qq.com/channel/send_buddy_msg2"
+            req_url = "https://d1.web2.qq.com/channel/send_buddy_msg2"
             data = {
                 'r':
                  '{{"to":{0}, "face":594, "content":"[\\"{4}\\", [\\"font\\", {{\\"name\\":\\"Arial\\", \\"size\\":\\"10\\", \\"style\\":[0, 0, 0], \\"color\\":\\"000000\\"}}]]", "clientid":{1}, "msg_id":{2}, "psessionid":"{3}"}}'.format(
@@ -993,7 +993,7 @@ class QQBot(object):
         rsp = ""
         try:
             logger.info("Starting send discuss group message: %s" % reply_content)
-            req_url = "http://d1.web2.qq.com/channel/send_discu_msg2"
+            req_url = "https://d1.web2.qq.com/channel/send_discu_msg2"
             data = {
                 'r':
                  '{{"did":{0}, "face":564,"content":"[\\"{4}\\",[\\"font\\",{{\\"name\\":\\"Arial\\",\\"size\\":\\"10\\",\\"style\\":[0,0,0],\\"color\\":\\"000000\\"}}]]","clientid":{1},"msg_id":{2},"psessionid":"{3}"}}'.format(
