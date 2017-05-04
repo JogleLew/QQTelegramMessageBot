@@ -1,0 +1,10 @@
+{
+  "plugin_packages": [],
+  "plugin_on": [
+      "basic",
+      "manager",
+      "my_plugin",
+      "weather",
+      "satoru"
+  ]
+}
