@@ -1,17 +1,17 @@
 QQTelegramMessageBot
 =========
 
-本bot是基于Yinzo/SmartQQBot和nickoala/telepot的二次开发。
+本bot是基于[Yinzo/SmartQQBot](https://github.com/Yinzo/SmartQQBot)和[nickoala/telepot](https://github.com/nickoala/telepot)的二次开发。
 
 ## 功能和特性
 + 支持QQ群和Telegram群的文字消息互转
 + Telegram群的Sticker会转换成对应的emoji发送给QQ群
 + QQ群可以通过指令向Telegram群发送Sticker
-+ Yinzo/SmartQQBot中可用的插件在本bot中依然可用
++ [Yinzo/SmartQQBot](https://github.com/Yinzo/SmartQQBot)中可用的插件在本bot中依然可用
 
 ## 使用方法
-1. 按照nickoala/telepot的介绍，安装和测试Telepot
-1. 按照Yinzo/SmartQQBot的介绍，安装相关依赖
+1. 按照[nickoala/telepot](https://github.com/nickoala/telepot)的介绍，安装和测试Telepot
+1. 按照[Yinzo/SmartQQBot](https://github.com/Yinzo/SmartQQBot)的介绍，安装相关依赖
 1. 在Telegram中向@BotFather申请一个bot，记住你的token，并加入一个群组
 1. 注册一个QQ小号，作为QQ机器人，加入一个QQ群
 1. src/run.py中填入Telegram Bot Token，并使用python run.py运行，如果没有图形界面，需要加入参数--no-gui。扫描当前目录下的二维码v.jpg，登录QQ小号。
