@@ -3,6 +3,8 @@ QQTelegramMessageBot
 
 本bot是基于[Yinzo/SmartQQBot](https://github.com/Yinzo/SmartQQBot)和[nickoala/telepot](https://github.com/nickoala/telepot)的二次开发。
 
+注：由于WebQQ协议不稳定，不建议使用此bot。
+
 ## 功能和特性
 + 支持QQ群和Telegram群的文字消息互转
 + Telegram群的Sticker会转换成对应的emoji发送给QQ群
